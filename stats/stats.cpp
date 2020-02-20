@@ -13,10 +13,18 @@ Stats::Stats(std::vector<PCB> &finished_vector) {
 //Process 1 Required CPU time:2  arrived:0 started:0 finished:2
 //if there are 10 processes in vector, should print 10 lines
 void Stats::showAllProcessInfo() {
-//	while(!Stats::vec->empty()){
-//		std::cout >>
-//		vec.
-//	}
+	for (PCB p : *vec) {
+		std::cout
+				<< "Process " + std::to_string(p.process_number)
+						+ " Required CPU time:"
+						+ std::to_string(p.required_cpu_time) + " arrived:"
+						+ std::to_string(p.arrival_time) + " started:"
+						+ std::to_string(p.start_time) + " finish:"
+						+ std::to_string(p.finish_time);
+		if (!vec->empty()) {
+			std::cout << '\n';
+		}
+	}
 }
 //after a process is placed in the ready_q, how long does
 //it take before its placed on the processor?
@@ -60,7 +68,7 @@ float Stats::get_av_wait_time() {
 //calcStats() saves the results here
 void Stats::calcStats() {
 	av_wait_time = get_av_wait_time();
-	av_turnaround_time = get_av_turnaround_time() ;
-	av_response_time= get_av_response_time();
+	av_turnaround_time = get_av_turnaround_time();
+	av_response_time = get_av_response_time();
 }
 
