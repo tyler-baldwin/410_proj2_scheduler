@@ -9,14 +9,6 @@
 
 //add a process, either a new one or one that
 //had been running on the CPU and has been preempted
-virtual void add(PCB p);
-
-virtual PCB getNext();
-
-bool isEmpty(){
-
-}
-
 void Scheduler::add(PCB p) {
 }
 

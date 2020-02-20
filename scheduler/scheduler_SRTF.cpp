@@ -1,3 +1,8 @@
+bool Scheduler_SRTF::time_to_switch_processes(int tick_count, PCB &p) {
+}
+
+void Scheduler_SRTF::sort() {
+}
 /*
  * SchedulerSRTF.cpp
  *
