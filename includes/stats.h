@@ -12,7 +12,9 @@
 class Stats {
 public:
 	Stats(std::vector<PCB> &finished_vector);
-	virtual ~Stats(){};
+	virtual ~Stats() {
+	}
+	;
 
 	//loops thru vec, prints 1 line for each process using the following format
 	//Process 1 Required CPU time:2  arrived:0 started:0 finished:2
