@@ -6,6 +6,7 @@
  */
 
 #include "../includes/scheduler.h"
+#include "../includes/dispatcher.h"
 
 //add a process, either a new one or one that
 //had been running on the CPU and has been preempted
@@ -17,7 +18,6 @@ PCB Scheduler::getNext() {
 	PCB temp = Scheduler::ready_q->front();
 	Scheduler::ready_q->pop();
 	return temp;
-
 }
 //returns true if there are no  jobs in the readyQ
 //false otherwise
@@ -32,5 +32,13 @@ bool Scheduler::isEmpty() {
 //true - switch processes
 //false - do not switch
 bool Scheduler::time_to_switch_processes(int tick_count, PCB &p) {
-
+	if(p.remaining_cpu_time == 0){
+		return true;
+	}
+	else if(Scheduler::preemptive == true && tick_count> Scheduler::time_slice){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
