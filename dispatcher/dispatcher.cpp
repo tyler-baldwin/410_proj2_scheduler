@@ -15,17 +15,10 @@ PCB Dispatcher::get_from_CPU() {
 
 //place the current process on the CPU for execution
 void Dispatcher::put_on_CPU(PCB &process) {
-	Dispatcher::cpu->put_process_on_core(process);
 	Dispatcher::is_valid_job_on_cpu = true;
+	Dispatcher::cpu->put_process_on_core(process);
 }
 //is CPU idle or working
 bool Dispatcher::isValidJobOnCPU() {
 	return Dispatcher::is_valid_job_on_cpu;
-//	PCB curr = Dispatcher::cpu->get_COPY_of_Current_Process();
-//	if(curr.process_number == Constants::UNINITIALIZED){
-//		return false;
-//	}
-//	else{
-//		return true;
-//	}
 }
