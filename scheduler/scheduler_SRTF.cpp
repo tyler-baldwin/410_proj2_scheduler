@@ -1,3 +1,5 @@
+#include "../includes/scheduler_SRTF.h"
+
 bool Scheduler_SRTF::time_to_switch_processes(int tick_count, PCB &p) {
 }
 

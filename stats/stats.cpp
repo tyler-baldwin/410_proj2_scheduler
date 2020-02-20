@@ -1,3 +1,5 @@
+#include "../includes/stats.h"
+
 Stats::Stats(std::vector<PCB> &finished_vector) {
 }
 

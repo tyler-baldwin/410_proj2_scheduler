@@ -14,7 +14,10 @@ void Scheduler::add(PCB p) {
 }
 //get next process
 PCB Scheduler::getNext() {
+	PCB temp = Scheduler::ready_q->front();
 	Scheduler::ready_q->pop();
+	return temp;
+
 }
 //returns true if there are no  jobs in the readyQ
 //false otherwise
