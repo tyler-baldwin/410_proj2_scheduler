@@ -5,9 +5,13 @@
  *      Author: Tyler fing Baldwin
  */
 #include "../includes/stats.h"
+#include "../includes/constants.h"
 
 Stats::Stats(std::vector<PCB> &finished_vector) {
 	vec = &finished_vector;
+	av_wait_time = UNINITIALIZED;
+	av_turnaround_time = UNINITIALIZED;
+	av_response_time = UNINITIALIZED;
 }
 //loops thru vec, prints 1 line for each process using the following format
 //Process 1 Required CPU time:2  arrived:0 started:0 finished:2
@@ -19,7 +23,7 @@ void Stats::showAllProcessInfo() {
 						+ " Required CPU time:"
 						+ std::to_string(p.required_cpu_time) + " arrived:"
 						+ std::to_string(p.arrival_time) + " started:"
-						+ std::to_string(p.start_time) + " finish:"
+						+ std::to_string(p.start_time) + " finished:"
 						+ std::to_string(p.finish_time);
 		if (!vec->empty()) {
 			std::cout << '\n';

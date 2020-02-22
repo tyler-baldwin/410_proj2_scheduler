@@ -11,10 +11,10 @@
 //add a process, either a new one or one that
 //had been running on the CPU and has been preempted
 void Scheduler::add(PCB p) {
-	if(preemptive){
-		sort();
-	}
 	Scheduler::ready_q->push(p);
+	if(preemptive){
+			sort();
+	}
 }
 //get next process
 PCB Scheduler::getNext() {
